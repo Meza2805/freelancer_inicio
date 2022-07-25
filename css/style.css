@@ -196,4 +196,52 @@ h3 {
     }
 }
 
-.servicio {}
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio .iconos {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/*CONTACTO*/
+
+.formulario {
+    background-color: var(--gris);
+    width: min(40rem, 100%);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 1.8 rem;
+    text-align: center;
+}
