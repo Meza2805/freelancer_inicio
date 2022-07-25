@@ -1,0 +1,199 @@
+:root {
+    /*Declaracion de variables*/
+    --blanco: #fff;
+    /*Paleta de colores*/
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --celesteclaro: #AED6F1;
+}
+
+*:before,
+*:after {
+    /*permite aplciar el box-sizing a todos los elementos*/
+    box-sizing: inherit;
+}
+
+body {
+    /*Tamaño para cuerpo de HTML*/
+    font-size: 16px;
+    background-image: linear-gradient(to bottom, var(--celesteclaro)0%, var(--blanco)100%);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    /*texto posicionado en el centro*/
+    font-size: 3.8rem;
+    /*tamaño de fuente en 380 pixeles*/
+    font-family: 'Playfair Display', serif;
+    /*usando tipogracia de google font agregada con su enlace*/
+}
+
+.titulo span {
+    font-size: 2rem;
+    /*tamaño y color diferente para la ultima palabra del titulo principal*/
+    color: red;
+}
+
+.contenedor {
+    /*Propiedades para el contenedor de la navegacion*/
+    max-width: 100rem;
+    /*estableciendo el ancho maximo del contenedor adaptable*/
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.contenedor-servicios {
+    max-width: 50rem;
+    margin: auto;
+    border-radius: 0.5rem;
+}
+
+.nav-bag {
+    background-color: var(--secundario);
+    /*Color de fondo de la barra de navegacion*/
+}
+
+.navegador-principal {
+    /*se define el comportamiento de la barra de navegacion el estilo con display flex,
+     y el comportamiento de sus item seran de columnas, unos a la par de otros*/
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 480px) {
+    /*el siguiente es una consulta que se ejecutara mientras no se cumpla la condicion de los 480px 
+    el ancho de la pantalla alcance los 480 pixeles o menos*/
+    .navegador-principal {
+        flex-direction: row;
+        /*el compartamiendo de la navegacion sera en forma de fila, una debajo del otro*/
+        justify-content: space-evenly;
+        /*el contenido esta justicado con un espacio de la misma proporcion para todos los lados de este*/
+    }
+}
+
+.nav-bag .navegador-principal a {
+    /*Aplicando el formato para cada elemento de la lista de navacion*/
+    display: block;
+    /*es el tipo de display por defecto para el elemento, se coloca como buena practica*/
+    text-align: center;
+    /*se centra todo el texto dentro del bloque*/
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-bag .navegador-principal a:hover {
+    /*se declara el evento hover para mostrar
+     un color y tipografia diferente al posicionar el puntero 
+     sobre un elemento de la lista de navegacion*/
+    background-color: var(--primario);
+    color: black;
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    /*sirve para color una imagen de fondo*/
+    background-repeat: no-repeat;
+    /*obliga a que la imagen no se repita para poder llenar toda la pagina*/
+    background-size: cover;
+    /*permite que la imagen cargada ocupe todo el espacio disponible sin repetirse*/
+    height: 240px;
+    position: relative;
+    /*a la clase padre se establece la posicion que servira como guia 
+    para que la clase hijo se desplace*/
+    margin-bottom: 5rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    /*esto permite que los compnententes de la clase hijo
+    se desplacen sobre la clase padre*/
+    background-color: rgba(0, 0, 0, 0.5);
+    /*manera anterior para darle transparencia a un 
+    imagen con un color*/
+    background-color: rgb(0 0 0/ 50%);
+    /*manera actual para darle transparencia a un 
+    imagen con un color, es importante saber que no todos los 
+    navegadores soportan esta sintaxis*/
+    height: 100%;
+    /*se establece que la clase hijo se distribuya sobre
+    la altura de la clase padre*/
+    width: 100%;
+    /*se establece que la clase hijo se distribuya sobre todo el ancho de la clase padre*/
+    display: flex;
+    /*estable la prodiedad para manejar los componentes de la clase*/
+    flex-direction: column;
+    /*coloca los compnentes de manera vertical*/
+    align-items: center;
+    /*centra todos los componentes*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 780px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    /*Codigp utilizado para representar un recuadro con su grafica
+    */
+    -webkit-caja-sombra: 6px 7px 5px 1px rgba(191, 186, 224, 0.4);
+    -moz-caja-sombra: 6px 7px 5px 1px rgba(191, 186, 224, 0.4);
+    box-shadow: 6px 7px 5px 1px rgba(191, 186, 224, 0.4);
+    background-color: var(--blanco);
+}
+
+@media (min-width: 780px) {
+    /*Consula que se ejecutara siempre y cuando no llegue al ancho minimo*/
+    .servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+}
+
+.servicio {}
